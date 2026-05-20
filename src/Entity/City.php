@@ -45,6 +45,12 @@ class City
     private string $lng;
 
     /**
+     * @var string|null
+     */
+    #[ORM\Column(name: 'coordinates', type: Types::STRING, nullable: false, columnDefinition: "POINT NOT NULL")]
+    private ?string $coordinates = null;
+
+    /**
      * @var string
      */
     #[ORM\Column(name: 'strContinent', type: Types::STRING, length: 20, nullable: false)]

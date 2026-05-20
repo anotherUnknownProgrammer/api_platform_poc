@@ -1,0 +1,22 @@
+resources:
+    App\Entity\City:
+        routePrefix: /v2
+
+        operations:
+            get_cities:
+                class: ApiPlatform\Metadata\GetCollection
+                uriTemplate: '/cities/poc'
+                provider: App\ApiPlatform\State\Provider\CityProvider
+                openapiContext:
+                    summary: 'Retrieves a collection of City resources.'
+                    description: 'Retrieves a collection of City resources.'
+
+            post_city:
+                class: ApiPlatform\Metadata\Post
+                uriTemplate: '/cities'
+                input: App\ApiPlatform\DTO\Input\CityInputDTO
+                processor: App\ApiPlatform\State\Processor\CityProcessor
+                status: 201
+                openapiContext:
+                    summary: 'Creates a City resource.'
+                    description: 'Creates a new City resource from a CityInputDTO.'

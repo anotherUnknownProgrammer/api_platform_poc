@@ -1,0 +1,16 @@
+api_platform:
+    title: api_platform_poc
+    version: 1.0.0
+    formats:
+        jsonld: ['application/ld+json']
+        json: ['application/json']
+    defaults:
+        stateless: true
+        cache_headers:
+            vary: ['Content-Type', 'Authorization', 'Origin']
+        pagination_enabled: true
+        pagination_maximum_items_per_page: 100
+
+    mapping:
+        paths:
+            - '%kernel.project_dir%/src/ApiPlatform/Resource'
